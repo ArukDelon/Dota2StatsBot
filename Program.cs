@@ -14,14 +14,14 @@ webBuilder.Logging.AddConsole();
 
 var webApp = webBuilder.Build();
 
-webApp.MapGet("/", () => Results.Ok(new
+webApp.Map("/", () => Results.Ok(new
 {
     status = "🟢 online",
     bot = "Dota2StatsBot",
     time = DateTime.UtcNow.ToString("o")
 }));
 
-webApp.MapGet("/health", () => "OK");
+webApp.Map("/health", () => Results.Ok("OK"));
 
 // ──────────────────────────────────────────────
 // 🔑  ТОКЕН
